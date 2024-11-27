@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UAC Logistics - Cotización</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="index.html">UAC Logistics</a>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link" href="cotizacion.html">Cotización</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="contenedor mt-5" id="quote">
+        <h2 class="text-center texto-primario">Cotización de Envío</h2>
+        <form id="quoteForm" class="formulario-sombreado text-center">
+            <div id="paso1" class="form-step">
+                <h3>Datos Básicos del Envío</h3>
+                <div class="form-group">
+                    <label for="numPaquetes">Número de Paquetes</label>
+                    <input type="number" class="form-control" id="numPaquetes" min="1" required>
+                </div>
+                <button type="button" class="btn btn-primary" onclick="agregarPaquetes()">Agregar Paquetes</button>
+                <div id="detallesPaquetes"></div>
+                <button type="button" class="btn btn-primary" onclick="siguientePaso(1)">Siguiente</button>
+            </div>
+            <div id="paso2" class="form-step" style="display:none;">
+                <h3>Opciones de Envío</h3>
+                <div id="opcionesEnvio" class="d-flex justify-content-center flex-wrap">
+                    <div class="form-group opcion-envio m-2">
+                        <input type="radio" id="opcion1" name="opcionEnvio" value="DHL - $10" required>
+                        <label for="opcion1"><img src="img/DHL.png" alt="DHL" class="img-envio"> DHL - $10</label>
+                    </div>
+                    <div class="form-group opcion-envio m-2">
+                        <input type="radio" id="opcion2" name="opcionEnvio" value="Estafeta - $8">
+                        <label for="opcion2"><img src="img/Estafeta.jpg" alt="Estafeta" class="img-envio"> Estafeta - $8</label>
+                    </div>
+                    <div class="form-group opcion-envio m-2">
+                        <input type="radio" id="opcion3" name="opcionEnvio" value="RedPack - $7">
+                        <label for="opcion3"><img src="img/RedPack.png" alt="RedPack" class="img-envio"> RedPack - $7</label>
+                    </div>
+                    <div class="form-group opcion-envio m-2">
+                        <input type="radio" id="opcion4" name="opcionEnvio" value="Fedex - $12">
+                        <label for="opcion4"><img src="img/Fedex.png" alt="Fedex" class="img-envio"> Fedex - $12</label>
+                    </div>
+                </div>
+                <button type="button" class="btn btn-secondary" onclick="pasoAnterior(2)">Atrás</button>
+                <button type="button" class="btn btn-primary" onclick="siguientePaso(2)">Siguiente</button>
+            </div>
+            <div id="paso3" class="form-step" style="display:none;">
+                <h3>Información Detallada</h3>
+                <div class="form-group">
+                    <label for="nombreRemitente">Nombre del Remitente</label>
+                    <input type="text" class="form-control" id="nombreRemitente" required>
+                </div>
+                <div class="form-group">
+                    <label for="nombreDestinatario">Nombre del Destinatario</label>
+                    <input type="text" class="form-control" id="nombreDestinatario" required>
+                </div>
+                <div class="form-group">
+                    <label for="direccion">Dirección Completa</label>
+                    <input type="text" class="form-control" id="direccion" required>
+                </div>
+                <div class="form-group">
+                    <label for="telefono">Teléfono</label>
+                    <input type="text" class="form-control" id="telefono" required>
+                </div>
+                <button type="button" class="btn btn-secondary" onclick="pasoAnterior(3)">Atrás</button>
+                <button type="submit" class="btn btn-success">Confirmar</button>
+            </div>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

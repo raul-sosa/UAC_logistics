@@ -1,0 +1,85 @@
+body {
+    background-color: #f0f8ff;
+}
+
+.navbar {
+    margin-bottom: 20px;
+}
+
+h1, h2 {
+    color: #007bff;
+    text-align: center;
+}
+
+.texto-secundario {
+    color: #0056b3;
+}
+
+.form-step {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.form-group {
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-group img {
+    width: 30px;
+    margin-right: 10px;
+}
+
+.form-group label {
+    color: #007bff;
+}
+
+#detallesPaquetes .form-group {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+#opcionesEnvio {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.opcion-envio {
+    margin: 10px;
+}
+
+.img-envio {
+    width: 40px;
+    height: auto;
+}
+
+.imagen-cheems {
+    width: 400px; 
+    height: auto;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.formulario-sombreado {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+#paso1 .btn, #paso2 .btn, #paso3 .btn {
+    margin: 10px;
+}
+
+button {
+    width: 150px;
+}
+
+.texto-primario {
+    color: #007bff;
+}
